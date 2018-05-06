@@ -1,4 +1,5 @@
 
+import OORestaurants.OO_Restaurants;
 import javax.swing.JFrame;
 import loginandregister.*;
 /*
@@ -218,7 +219,8 @@ public class LoginForm extends javax.swing.JFrame {
 
         flag = LoginAndRegister.login(uName, pWord);
         if (flag ==1 ){
-            RestaurantApp ra = new RestaurantApp();
+            //RestaurantApp ra = new RestaurantApp();
+            OO_Restaurants ra = new OO_Restaurants();
             ra.setVisible(true);
             ra.pack();
             ra.setLocationRelativeTo(null);

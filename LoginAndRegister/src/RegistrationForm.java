@@ -36,7 +36,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabelMinimize = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
         jButtonCreate = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -51,6 +50,8 @@ public class RegistrationForm extends javax.swing.JFrame {
         Address = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         socialText = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        Positiontext = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -58,7 +59,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(232, 126, 4));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Login Page");
+        jLabel3.setText("Register User Account");
 
         jLabelClose2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelClose2.setText("X");
@@ -88,7 +89,7 @@ public class RegistrationForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(jLabelMinimize)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelClose2)
@@ -110,9 +111,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Username:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Password:");
-
         firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButtonCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -127,13 +125,13 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel7.setText("Last Name:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("First Name");
+        jLabel8.setText("First Name:");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Password:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("SSN");
+        jLabel10.setText("SSN:");
 
         lastName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -161,6 +159,16 @@ public class RegistrationForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Position:");
+
+        Positiontext.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Positiontext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PositiontextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -175,27 +183,26 @@ public class RegistrationForm extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createSequentialGroup()
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(67, 67, 67)
-                                    .addComponent(jLabel6))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addGap(30, 30, 30)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel5)
                                         .addComponent(jLabel9)
                                         .addComponent(jLabel10)
-                                        .addComponent(jLabel11)))
+                                        .addComponent(jLabel11)
+                                        .addComponent(jLabel12)))
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addGap(30, 30, 30)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
                                         .addComponent(jLabel8))))
-                            .addGap(10, 10, 10)
+                            .addGap(41, 41, 41)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(firstName)
                                 .addComponent(lastName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                 .addComponent(UserName, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                 .addComponent(Password, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(socialText, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))))
+                                .addComponent(socialText, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(Positiontext, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))))
                 .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -205,9 +212,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,7 +232,11 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(socialText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Positiontext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
@@ -252,7 +261,9 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 457, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 41, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -293,11 +304,30 @@ public class RegistrationForm extends javax.swing.JFrame {
         String pssword = Password.getText();
         System.out.println(pssword);
         //int date = DateBox.getDate();
+        String position = Positiontext.getText();
+        if(position.equals("manager")){
+            position = "1";
+        }
+        else if(position.equals("server")){
+            position = "2";
+        }
+        else if(position.equals("cook")){
+            position = "3";
+        }
+        else if(position.equals("busser")){
+            position = "4";
+        }
+        else if(position.equals("dishwasher")){
+            position = "5";
+        }
+        else{
+            position = "6";
+        }
         
         String addy = Address.getText();
         System.out.println(addy);
 
-        flag = LoginAndRegister.createAccount(social, fName, lName, username, pssword, addy);
+        flag = LoginAndRegister.createAccount(social, fName, lName, username, pssword, position, addy);
         if(flag==1){
             RestaurantApp ra = new RestaurantApp();
             ra.setVisible(true);
@@ -311,6 +341,10 @@ public class RegistrationForm extends javax.swing.JFrame {
     private void socialTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_socialTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_socialTextActionPerformed
+
+    private void PositiontextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PositiontextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PositiontextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,15 +384,16 @@ public class RegistrationForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Address;
     private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField Positiontext;
     private javax.swing.JTextField UserName;
     private javax.swing.JTextField firstName;
     private javax.swing.JButton jButtonCreate;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

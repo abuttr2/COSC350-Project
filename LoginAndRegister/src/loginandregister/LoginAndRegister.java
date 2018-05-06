@@ -22,11 +22,8 @@ public class LoginAndRegister {
         
     }
     
-    //Does user exist
-    //Get password for user
-    //
     
-   public static int createAccount(String social,String firstName, String lastName, String username, String password, String address){
+   public static int createAccount(String social,String firstName, String lastName, String username, String password, String position, String address){
         Connection conn = null;
         int flag = 0;
        try{
@@ -35,7 +32,7 @@ public class LoginAndRegister {
             System.out.println("Connected!");
             Statement stmt = (Statement) conn.createStatement();
 
-            String insert = "INSERT INTO User " + "Values ('" + social + "','" + firstName + "','" + lastName  + "','" + username  + "','" + password  + "','" + address + "')";
+            String insert = "INSERT INTO User " + "Values ('" + social + "','" + firstName + "','" + lastName  + "','" + username  + "','" + password  + "','" + address  + "','" + position + "')";
             flag = 1;
             stmt.executeUpdate(insert);
             return flag;
