@@ -140,4 +140,25 @@ public class LoginAndRegister {
         }
        
    }
+   
+   public static void returnBill(String billNum){
+      Connection conn = null;
+      PreparedStatement pst=null;
+      ResultSet rs=null;
+       
+      try{
+          conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+          Statement stmt = (Statement) conn.createStatement();
+
+          rs = stmt.executeQuery("Select * from Transactions where BillNum = '" + billNum + "';");
+          System.out.println(rs); //gets the first column's rows.
+
+          
+   
+      } catch (SQLException e){
+            System.err.println(e);
+        }
+       
+   }
+   
 }

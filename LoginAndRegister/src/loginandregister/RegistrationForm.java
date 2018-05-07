@@ -1,5 +1,6 @@
 package loginandregister;
 
+import OORestaurants.OO_Restaurants;
 import javax.swing.JFrame;
 //import loginandregister.*;
 
@@ -33,8 +34,6 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabelClose2 = new javax.swing.JLabel();
-        jLabelMinimize = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         firstName = new javax.swing.JTextField();
@@ -61,27 +60,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Register User Account");
 
-        jLabelClose2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelClose2.setText("X");
-        jLabelClose2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelClose2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelClose2MouseClicked(evt);
-            }
-        });
-
-        jLabelMinimize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelMinimize.setText("-");
-        jLabelMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelMinimizeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabelMinimizeMouseEntered(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -89,20 +67,13 @@ public class RegistrationForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(jLabelMinimize)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelClose2)
-                .addContainerGap())
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabelClose2)
-                    .addComponent(jLabelMinimize))
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -266,18 +237,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabelClose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClose2MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabelClose2MouseClicked
-
-    private void jLabelMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinimizeMouseClicked
-        this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_jLabelMinimizeMouseClicked
-
-    private void jLabelMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinimizeMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabelMinimizeMouseEntered
-
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         LoginForm lgf = new LoginForm();
         lgf.setVisible(true);
@@ -305,20 +264,17 @@ public class RegistrationForm extends javax.swing.JFrame {
         if(position.equals("manager")){
             position = "1";
         }
-        else if(position.equals("server")){
+        else if(position.equals("cashier")){
             position = "2";
         }
         else if(position.equals("cook")){
             position = "3";
         }
-        else if(position.equals("busser")){
+        else if(position.equals("dishwasher")){
             position = "4";
         }
-        else if(position.equals("dishwasher")){
-            position = "5";
-        }
         else{
-            position = "6";
+            position = "5";
         }
         
         String addy = Address.getText();
@@ -326,7 +282,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         flag = LoginAndRegister.createAccount(social, fName, lName, username, pssword, position, addy);
         if(flag==1){
-            RestaurantApp ra = new RestaurantApp();
+            OO_Restaurants ra = new OO_Restaurants();
             ra.setVisible(true);
             ra.pack();
             ra.setLocationRelativeTo(null);
@@ -394,8 +350,6 @@ public class RegistrationForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelClose2;
-    private javax.swing.JLabel jLabelMinimize;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
