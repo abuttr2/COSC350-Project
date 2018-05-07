@@ -22,7 +22,7 @@ public class LoginAndRegister {
         
     }
     
-    
+   //Method to create user account 
    public static int createAccount(String social,String firstName, String lastName, String username, String password, String position, String address){
         Connection conn = null;
         int flag = 0;
@@ -41,10 +41,10 @@ public class LoginAndRegister {
         }
        return 0;
    }
-   
-      public static int createAdminAccount(String social,String firstName, String lastName, String username, String password, String address){
-        Connection conn = null;
-        int flag = 0;
+   //Method to create admin account
+   public static int createAdminAccount(String social,String firstName, String lastName, String username, String password, String address){
+       Connection conn = null;
+       int flag = 0;
        try{
             conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
 
@@ -60,7 +60,7 @@ public class LoginAndRegister {
         }
        return 0;
    }
-   
+   //Method for user login
    public static int login(String username, String password){
        Connection conn = null;
        PreparedStatement pst=null;
@@ -82,21 +82,16 @@ public class LoginAndRegister {
                return flag;
            }
            else{
-               JOptionPane.showMessageDialog(null, "Invalid Username or Password","Access Denied",JOptionPane.ERROR_MESSAGE);
-               
+               JOptionPane.showMessageDialog(null, "Invalid Username or Password","Access Denied",JOptionPane.ERROR_MESSAGE);              
            }
-           
-           //Statement stmt = (Statement) conn.createStatement();
-           
-           
-           
-           
+   
         } catch (SQLException e){
             System.err.println(e);
         }
        return 0;
    }
    
+      //Method for admin to login
       public static int adminLogin(String username, String password){
        Connection conn = null;
        PreparedStatement pst=null;
@@ -118,18 +113,31 @@ public class LoginAndRegister {
                return flag;
            }
            else{
-               JOptionPane.showMessageDialog(null, "Invalid Username or Password","Access Denied",JOptionPane.ERROR_MESSAGE);
-               
+               JOptionPane.showMessageDialog(null, "Invalid Username or Password","Access Denied",JOptionPane.ERROR_MESSAGE);  
            }
-           
-           //Statement stmt = (Statement) conn.createStatement();
-           
-           
-           
            
         } catch (SQLException e){
             System.err.println(e);
         }
        return 0;
+   }
+   
+      //method for admin to delete account
+   public static void deleteAccount(String SSN, String username){
+       Connection conn = null;
+       PreparedStatement pst=null;
+       ResultSet rs=null;
+       
+       try{
+           conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+           
+           Statement stmt = (Statement) conn.createStatement();
+           String insert = "Delete FROM User Where SSN = '" + SSN + "' AND username = '" + username + "';";
+           stmt.executeUpdate(insert);
+   
+      } catch (SQLException e){
+            System.err.println(e);
+        }
+       
    }
 }
